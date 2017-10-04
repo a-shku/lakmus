@@ -16,7 +16,17 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.httpService.getData().then(response => this.mydata = response);
+    this.httpService.getData().then(
+        persons => {this.mydata = persons
+        console.log('mydata', this.mydata)
+      }
+    /*function(response ){
+      console.log('response', response);
+      //mydata = response;
+    }*/
+
+    );
+
   }
 
 }
