@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -36,7 +36,8 @@ export class ApiServiceService {
   }
 
   postData(person: any){
-    this.http.post(this.apiUrl+'clients', {name: 'fds', gender: 'male'})
+    this.http.post(this.apiUrl+'clients', { "name": "dsasd", "gender": "fds", "phone": "dsa"},
+      {headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8')})
       .toPromise()
       .then(response => {
         console.log('post', response);

@@ -37,7 +37,7 @@ export class AppComponent implements OnInit{
 
     //);
 
-    //this.httpService.postData(this.person)
+    this.httpService.postData(this.person)
 
   }
 
