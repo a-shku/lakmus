@@ -15,9 +15,16 @@ export class ApiServiceService {
 
 
   getData(): any {
-    return this.http.get(this.apiUrl+'clients')
-      .toPromise()
-      .then(
+    return this.http.get(this.apiUrl+'clients')/*.subscribe(
+      respone => {
+        console.log('get', respone);
+        this.persons = respone;
+        return this.persons
+
+      }
+    );*/
+      //.toPromise()
+      /*.then(
         respone => {
           console.log(respone);
           this.persons = respone;
@@ -25,11 +32,19 @@ export class ApiServiceService {
 
         }
 
-      )/*.catch(this.handleError)*/;
+      ).catch(this.handleError);*/
   }
 
-  private handleError(error: any){
+  postData(person: any){
+    this.http.post(this.apiUrl+'clients', {name: 'fds', gender: 'male'})
+      .toPromise()
+      .then(response => {
+        console.log('post', response);
+      })
+  }
+
+  /*private handleError(error: any){
     console.error('error', error);
     return Promise.reject(error.message || error);
-  }
+  }*/
 }

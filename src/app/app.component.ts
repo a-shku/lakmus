@@ -9,23 +9,35 @@ import {ApiServiceService} from './services/api-service.service'
 export class AppComponent implements OnInit{
   title = 'app';
 
+  person: any = {name: 'fds', gender: 'male'};
+
   mydata: any;
 
   constructor(private httpService: ApiServiceService){
     this.mydata = [];
   }
 
-  ngOnInit(){
-    this.httpService.getData().then(
-        persons => {this.mydata = persons
-        console.log('mydata', this.mydata)
-      }
+  ngOnInit(): void{
+   let a: any = this.httpService.getData().subscribe(
+     respone => {
+       console.log('get', respone);
+       this.mydata = respone;
+     }
+
+     )
+    console.log('aaa', a);/*.then(
+        persons => {
+          this.mydata = persons;
+          console.log('mydata', this.mydata);
+        }*/
     /*function(response ){
       console.log('response', response);
       //mydata = response;
     }*/
 
-    );
+    //);
+
+    //this.httpService.postData(this.person)
 
   }
 
