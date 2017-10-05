@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
     title = 'app';
 
     mydata: {}[];
+    createdPerson: {};
 
     constructor(private httpService: ApiServiceService) {
         this.mydata = [];
@@ -35,7 +36,7 @@ export class AppComponent implements OnInit {
             body += key + '=' + encodeURIComponent(personObj[key]);
         }
 
-        //this.httpService.postData(body);
+        this.httpService.postData(body).subscribe(response => this.createdPerson = response);
 
     }
 
