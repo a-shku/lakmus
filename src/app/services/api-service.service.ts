@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Observable';
+
 
 @Injectable()
 export class ApiServiceService {
@@ -14,25 +16,31 @@ export class ApiServiceService {
   }
 
 
-  getData(): any {
-    return this.http.get(this.apiUrl+'clients')/*.subscribe(
-      respone => {
-        console.log('get', respone);
-        this.persons = respone;
-        return this.persons
+  getData(): Observable<any> {
+      let observable: Observable<any>;
+      if(observable){
+          return observable;
+      } else {
+          return this.http.get(this.apiUrl+'clients')/*.subscribe(
+           respone => {
+           console.log('get', respone);
+           this.persons = respone;
+           return this.persons
 
+           }
+           );*/
+          //.toPromise()
+          /*.then(
+           respone => {
+           console.log(respone);
+           this.persons = respone;
+           return this.persons
+
+           }
+
+           ).catch(this.handleError);*/
       }
-    );*/
-      //.toPromise()
-      /*.then(
-        respone => {
-          console.log(respone);
-          this.persons = respone;
-          return this.persons
 
-        }
-
-      ).catch(this.handleError);*/
   }
 
 
