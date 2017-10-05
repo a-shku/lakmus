@@ -37,7 +37,33 @@ export class AppComponent implements OnInit{
 
     //);
 
-    this.httpService.postData(this.person)
+   let personObj: any = {
+      name: "dsasd", gender: "fds", phone: "dsa"
+    };
+
+    let enc = encodeURIComponent(personObj);
+
+    let fd: FormData = new FormData();
+
+    let  body= '';
+    for(let key in personObj) {
+
+      if (body.length) {
+        body += '&'
+      }
+
+      body += key + '=' + encodeURIComponent(personObj[key]);
+
+
+    }
+
+    /*for(var pair of fd.get()) {
+      console.log('adsfadfadsf',  pair[0]+ ', '+ pair[1]);
+    }*/
+
+    this.httpService.postData(body);
+
+
 
   }
 

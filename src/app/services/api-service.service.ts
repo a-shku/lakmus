@@ -35,9 +35,14 @@ export class ApiServiceService {
       ).catch(this.handleError);*/
   }
 
-  postData(person: any){
-    this.http.post(this.apiUrl+'clients', { "name": "dsasd", "gender": "fds", "phone": "dsa"},
-      {headers: new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8')})
+
+
+  postData(fd: any){
+    this.http.post(this.apiUrl+'clients', fd,
+      {headers:
+        new HttpHeaders()
+          .set('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8')
+          .set('Accept', 'application/json')})
       .toPromise()
       .then(response => {
         console.log('post', response);
