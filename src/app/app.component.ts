@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        //get
         this.httpService.getData().subscribe(
             (respone) => {
                 console.log('get', respone);
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit {
             }
         );
 
+        //post
         let personObj: {name: string; gender: string; phone: string} = {
             name: "dsasd", gender: "fds", phone: "dsa"
         };
@@ -36,7 +38,8 @@ export class AppComponent implements OnInit {
             body += key + '=' + encodeURIComponent(personObj[key]);
         }
 
-        this.httpService.postData(body).subscribe(response => this.createdPerson = response);
+        // this.httpService.postData(body)
+        //     .subscribe(response => this.createdPerson = response);
 
     }
 
