@@ -4,7 +4,9 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {ApiServiceService} from './services/api-service.service';
-//import { MaterialModule } from '@angular/material'
+import { NoConflictStyleCompatibilityMode } from '@angular/material'
+import {MatTableModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -15,7 +17,10 @@ import {ApiServiceService} from './services/api-service.service';
     imports: [
         BrowserModule,
         HttpClientModule,
-        MaterialModule
+        NoConflictStyleCompatibilityMode,
+        MatTableModule,
+        BrowserAnimationsModule
+
     ],
     providers: [ApiServiceService],
     bootstrap: [AppComponent]
