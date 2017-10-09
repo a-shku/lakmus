@@ -8,7 +8,7 @@ import { NoConflictStyleCompatibilityMode } from '@angular/material'
 import {MatTableModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-
+//https://toster.ru/q/443644
 
 @NgModule({
     declarations: [
