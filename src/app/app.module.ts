@@ -7,15 +7,16 @@ import {ApiServiceService} from './services/api-service.service';
 import { NoConflictStyleCompatibilityMode } from '@angular/material'
 import {MatTableModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-//import {PersonsModule} from './modules/persons/persons.module';
-import { PersonsComponent } from './modules/persons/persons.component';
+import {PersonsModule} from './modules/persons/persons.module';
+//import { PersonsComponent } from './modules/persons/persons.component';
 
 //https://toster.ru/q/443644
+
 
 @NgModule({
     declarations: [
         AppComponent
-        ,PersonsComponent
+        //,PersonsComponent
     ],
     imports: [
         BrowserModule,
@@ -23,8 +24,7 @@ import { PersonsComponent } from './modules/persons/persons.component';
         NoConflictStyleCompatibilityMode,
         MatTableModule,
         BrowserAnimationsModule
-        //,PersonsModule
-
+        ,PersonsModule
 
     ],
     providers: [ApiServiceService],

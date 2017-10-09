@@ -21,6 +21,7 @@ export class Person {
     tabNumber: number;
 
     constructor(values: Object = {}){
+        //this.id = value.id
         Object.assign(this, values);
     }
 
