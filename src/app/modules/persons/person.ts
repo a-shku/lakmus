@@ -1,4 +1,4 @@
-export class Persons {
+export class Person {
     id: number;
     accountId: number;
     additionalInfo: string;
@@ -19,4 +19,9 @@ export class Persons {
     name: string;
     phone: string;
     tabNumber: number;
+
+    constructor(values: Object = {}){
+        Object.assign(this, values);
+    }
+
 }

@@ -5,6 +5,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+import {Person} from '../modules/persons/person'
 
 
 @Injectable()
@@ -19,8 +20,8 @@ export class ApiServiceService {
     }
 
 
-    getData(): Observable<any> {
-        let observable: Observable<any>;
+    getData(): Observable<Person> {
+        let observable: Observable<Person>;
         if (observable) {
             return observable;
         } else {

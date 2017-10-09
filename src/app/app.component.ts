@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiServiceService} from './services/api-service.service'
+import {Person} from './modules/persons/person';
+import {PersonsComponent} from './modules/persons/persons.component';
 
 @Component({
     selector: 'app-root',
@@ -9,7 +11,7 @@ import {ApiServiceService} from './services/api-service.service'
 export class AppComponent implements OnInit {
     title = 'app';
 
-    mydata: {}[];
+    mydata: Person[]/*any*/;
     createdPerson: {};
 
     constructor(private httpService: ApiServiceService) {
