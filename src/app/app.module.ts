@@ -8,7 +8,6 @@ import { NoConflictStyleCompatibilityMode } from '@angular/material'
 import {MatTableModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PersonsModule} from './modules/persons/persons.module';
-//import { PersonsComponent } from './modules/persons/persons.component';
 
 //https://toster.ru/q/443644
 
@@ -16,7 +15,6 @@ import {PersonsModule} from './modules/persons/persons.module';
 @NgModule({
     declarations: [
         AppComponent
-        //,PersonsComponent
     ],
     imports: [
         BrowserModule,

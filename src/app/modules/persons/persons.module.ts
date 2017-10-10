@@ -5,10 +5,9 @@ import { PersonsComponent } from './persons.component';
     declarations: [
         PersonsComponent
     ],
-    exports: [PersonsModule],
-  imports: [
-    CommonModule
-  ]
-  //,declarations: [PersonsComponent]
+    exports: [PersonsComponent],
+    imports: [
+        CommonModule
+    ]
 })
 export class PersonsModule { }

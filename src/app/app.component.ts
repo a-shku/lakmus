@@ -11,7 +11,7 @@ import {PersonsComponent} from './modules/persons/persons.component';
 export class AppComponent implements OnInit {
     title = 'app';
 
-    mydata: Person[]/*any*/;
+    mydata: /*Person[]*/any;
     createdPerson: {};
 
     constructor(private httpService: ApiServiceService) {
